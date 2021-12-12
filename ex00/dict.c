@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/12 20:58:07 by mabasset          #+#    #+#             */
-/*   Updated: 2021/12/12 20:58:10 by mabasset         ###   ########.fr       */
+/*   Created: 2021/12/12 23:03:48 by mabasset          #+#    #+#             */
+/*   Updated: 2021/12/12 23:03:52 by mabasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,22 @@ void	c_newline(char c, int *row, int *x)
 		*row += 1;
 		*x = 0;
 	}
+}
+
+int	check_zero(char *str, char *str2, int ac)
+{
+	if ((str[0] == '0') || ((ac == 3) && (str2[0] == '0')))
+	{
+		if ((str[1] == 0) || ((ac == 3) && (str2[1] == 0)))
+		{
+			ft_putstr("zero");
+			return (1);
+		}
+		else
+		{
+			err_msg();
+			return (0);
+		}
+	}
+	return (1);
 }
