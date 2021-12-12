@@ -6,7 +6,7 @@
 /*   By: mabasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 20:57:25 by mabasset          #+#    #+#             */
-/*   Updated: 2021/12/12 20:57:27 by mabasset         ###   ########.fr       */
+/*   Updated: 2021/12/12 23:32:15 by mabasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ void	p_unit(struct s_dict_str *dict_struct, char *n, int size, int max_size)
 	if ((n[0] == '0' && n[1] == '0') && n[2] == '0')
 		return ;
 	unit = malloc(sizeof(char) * (size));
+	if (unit == NULL)
+		return ;
 	unit[0] = '1';
 	while (i < size)
 	{

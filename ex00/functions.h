@@ -6,7 +6,7 @@
 /*   By: mabasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 20:58:32 by mabasset          #+#    #+#             */
-/*   Updated: 2021/12/12 20:58:37 by mabasset         ###   ########.fr       */
+/*   Updated: 2021/12/12 23:24:43 by mabasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	newline(char c, int *flag, int *j, int *i);
 void	double_point(char c, int *flag, int *j);
 void	try_split(struct s_dict_str *dict_struct, char *str, int size);
 void	split(struct s_dict_str *dict_struct, char *str, int size);
-void	process_start(char *str, char *dict);
+void	process_start(char *str, char *dict, int flag);
 void	c_newline(char c, int *row, int *x);
 void	print_cents(struct s_dict_str *dict_struct, char n, int max_size);
 void	print_dec(struct s_dict_str *dict_struct, char n, char m, int max_size);

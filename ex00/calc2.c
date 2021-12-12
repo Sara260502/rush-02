@@ -6,7 +6,7 @@
 /*   By: mabasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 20:57:47 by mabasset          #+#    #+#             */
-/*   Updated: 2021/12/12 20:57:51 by mabasset         ###   ########.fr       */
+/*   Updated: 2021/12/12 23:30:30 by mabasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,8 @@ int	c_unit(struct s_dict_str *dict_struct, char *n, int size, int max_size)
 	if ((n[0] == '0' && n[1] == '0') && n[2] == '0')
 		return (1);
 	unit = malloc(sizeof(char) * (size));
+	if (unit == NULL)
+		return (0);
 	unit[0] = '1';
 	while (i < size)
 	{
@@ -126,10 +128,8 @@ int	c_unit(struct s_dict_str *dict_struct, char *n, int size, int max_size)
 		i++;
 	}
 	if (size > 3)
-	{
 		if (!(c_nu(dict_struct, unit, size, max_size)))
 			return (0);
-	}
 	free(unit);
 	return (1);
 }

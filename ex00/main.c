@@ -6,7 +6,7 @@
 /*   By: mabasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 20:59:07 by mabasset          #+#    #+#             */
-/*   Updated: 2021/12/12 21:03:37 by mabasset         ###   ########.fr       */
+/*   Updated: 2021/12/12 23:32:53 by mabasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,24 +31,25 @@ int	main(int ac, char **av)
 	if (av[1][0] == '0')
 		ft_putstr("zero");
 	if (ac == 2)
-		process_start(av[1], "numbers.dict");
+		process_start(av[1], "numbers.dict", 0);
 	else
-		process_start(av[2], av[1]);
+		process_start(av[2], av[1], 0);
 	write(1, "\n", 1);
 }
 
-void	process_start(char *str, char *dict)
+void	process_start(char *str, char *dict, int flag)
 {
 	int				fp;
 	int				size;
 	int				maxlen;
-	int				flag;
 	t_dict_struct	*dict_struct;
 
-	flag = 0;
 	if (!(count(&size, &maxlen, dict)))
 		flag = 1;
 	dict_struct = malloc(sizeof(t_dict_struct) * size);
+	if (dict_struct == NULL)
+		if (!(err_msg()))
+			return ;
 	fp = open(dict, O_RDONLY);
 	if (flag == 0)
 	{
